@@ -1,0 +1,280 @@
+head {
+    color: #f8fae5;
+    padding: 10px;
+
+}
+
+header h1 {
+    color: #87af3e;
+    background-color: #f8fae5;
+    text-align: center;
+    padding: 10px;
+    border-radius: 20px;
+   
+}
+
+button {
+    background-color: #f8fae5;
+    color: #76453b;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 9px 9px;
+    cursor: pointer;
+    border-radius: 40px;
+}
+
+button:hover {
+    background-color: #87af3e;
+}
+
+.container {
+    display: flex; /* Flexbox para alinhar imagens lado a lado */
+    justify-content: space-around; /* Espaçamento uniforme entre as imagens */
+    align-items: center; /* Alinha as imagens verticalmente ao centro */
+    margin: 50px auto; /* Centraliza o container e adiciona margem */
+}
+
+.container img {
+    max-width: 30%; /* Faz com que a imagem não ultrapasse a largura do container */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 10px; /* Arredonda os cantos da imagem */
+}
+
+/* Carrossel */
+.carousel {
+    position: relative;
+    max-width: 800px; 
+    margin: auto;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+}
+
+.slide {
+    min-width: 50%; /* Faz com que cada slide ocupe 100% do contêiner */
+    box-sizing: border-box;
+}
+
+.slide img {
+    width: 60%; /* Ajusta a largura da imagem para caber no slide */
+    height: 300px;
+    border-radius: 10px;
+    max-height: 300px; 
+    object-fit: cover;
+    
+}
+
+.navigation-manual {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.manual-btn {
+    cursor: pointer;
+    
+    height: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 2px;
+    transition: background-color 0.3s ease;
+}
+
+.manual-btn:hover {
+    background-color: #87af3e;
+}
+
+/* rotação automática */
+@keyframes slide {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-100%); }
+    50% { transform: translateX(-200%); }
+    75% { transform: translateX(-300%); }
+    100% { transform: translateX(-400%); }
+    100% { transform: translateX(0); }
+}
+
+.carousel-images {
+    animation: slide 40s infinite;
+}
+
+#img-1:checked ~ .first {
+    margin-left: 0;
+}
+
+#img-2:checked ~ .first {
+    margin-left: -100%;
+}
+
+#img-3:checked ~ .first {
+    margin-left: -200%;
+}
+
+#img-4:checked ~ .first {
+    margin-left: -300%;
+}
+
+/* Navegação automática */
+.navigation-auto {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    bottom: 10px;
+}
+
+.navigation-auto div {
+    border: 1px solid #ffffff;
+    padding: 5px;
+    border-radius: 50%;
+    transition: 0.10s;
+    margin: 0 10px;
+    background-color: #87af3e;
+}
+
+.navigation-auto div:hover {
+    background-color: #76453b;
+}
+
+/* Para responsividade */
+@media only screen and (max-width: 768px) {
+    .carousel {
+        height: 250px;
+    }
+    .slides img {
+        height: 250px;
+        object-fit: cover;
+    }
+}
+
+footer {
+    background-color: #333;
+    color: #76453b;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+body {
+    text-align: center;
+    background-color: #76453b;
+    
+}
+
+.forms-and-lists {
+    color: #76453b; 
+    background-color: #f8fae5; 
+    text-align: left; 
+    display: flex;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    border-radius: 50px; 
+    margin-right: 20px;
+    justify-content: center; 
+    flex-wrap: flex;  
+}
+#segundo-formulario {
+    color: #76453b; 
+    background-color: hsl(0, 33%, 98%); 
+    text-align: left; 
+    padding: 30px; 
+    border-radius: 30px; 
+    font-family: Arial, sans-serif;
+    display: flex;
+    margin-right: 30px;
+}
+ol {
+    display: flex; 
+    padding: 0; /* Remove o preenchimento padrão da lista */
+    list-style-type: none; /* Remove os marcadores dos itens da lista */
+    margin: 5; /* Remove a margem padrão da lista */
+    justify-content: center;
+}
+
+ol li {
+    margin-right: 60px; /* Adiciona um espaço entre os itens */
+}
+
+ol a {
+    text-decoration: none; /* Remove o sublinhado dos links */
+    color: hsl(0, 33%, 98%); /* Cor do texto do link */
+}
+
+ol p {
+    margin: 5; /* Remove a margem padrão do parágrafo */
+}
+#dl-id {
+        font-family: Arial, sans-serif; /* Define a fonte para a lista */
+        margin: 50; /* Remove a margem padrão */
+        padding: 70; /* Remove o preenchimento padrão */
+        display: flex
+    }
+    
+    #dl-id dt {
+        font-weight: bold; /* Destaca os termos da lista */
+        margin-top: 20px; /* Espaçamento superior entre os termos */
+    }
+    
+    #dl-id dd {
+        margin: 0 auto 10px auto; /* Centraliza o dd e adiciona espaço abaixo */
+        display: block; /* Assegura que o conteúdo fique em bloco */
+        text-align: center; /* Centraliza o texto e a imagem */
+        max-width: 150px;
+    }
+    
+    #dl-id img {
+    width: 150px; /* Define uma largura fixa para todas as imagens */
+    height: 150px; /* Define uma altura fixa para todas as imagens */
+    object-fit: cover; /* Corta a imagem para que ela se ajuste ao contêiner mantendo a proporção */
+    border-radius: 10px; /* Mantém os cantos arredondados */
+    margin-bottom: 5px;  /* Arredonda os cantos das imagens */
+    }
+    
+    #dl-id span {
+    display: block; /* Garante que o texto fique abaixo da imagem */
+    margin-top: 5px; /* Espaço entre a imagem e o texto */
+    font-size: 14px; 
+    color: hsl(0, 33%, 98%); 
+    margin: 0 auto;
+}
+    .lista-container {
+    flex: 30; 
+    margin: 0 200px;
+    }
+    .form-container {
+        flex: 100px; 
+        margin: 0 80px; 
+        min-width: 10px; 
+        justify-content: space-between; 
+        border-radius: 30px; 
+    }
+    form {
+        display: center; 
+        flex-direction: block; 
+        gap: 10px; /* Espaço entre os elementos do formulário */
+        padding: 20px; 
+        border-radius: 20px; 
+        background-color: #9ac242; 
+        color: hsl(0, 33%, 98%); 
+    }
+    #conect{
+        justify-content: center; 
+        flex-wrap: flex; 
+        margin: 10px;
+        padding: 10px;  
+        border-radius: 50px;
+        color: hsl(0, 33%, 98%);
+        background-color: hsl(0, 33%, 98%);
+    }
+    
